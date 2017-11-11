@@ -29,12 +29,29 @@ app.post('/zip', function(req, res, next){
     .then(function (response) {
       var lat = response.data.results[0].geometry.location.lat;
       var long = response.data.results[0].geometry.location.lng;
-      console.log(lat,long)
       yelp.searchBusiness({ latitude: lat, longitude: long })
         .then((results) => console.log(results))
     })
     .catch(next)
 
+  res.redirect('/')
+})
+
+app.post('/google-map', function(req, res, next){
+  //documentation link: https://developers.google.com/maps/documentation/distance-matrix/intro#Introduction
+  //calculate socialistic distance with arrival time/travel
+  var GKEY = process.env.GOOGLE_MATRIX_KEY
+  var arrival_time = 'NULL'//potential parameter
+  //Note: this api has a traffic_model parameter but i need a google premium plan client id. parameter needs departuretime.
+  var google = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=29.7431508,-95.38872|29.77,-95.37&destinations=Houston,TX&key=${GKEY}`
+
+  axios.get(google)
+    .then(function(response){
+      console.log(response.data.rows[0].elements[0]);
+      console.log(response.data.rows[1].elements[0]);
+      //i can get distance and duration from multiple origins to the same destination
+    })
+    .catch(next);
   res.redirect('/')
 })
 
