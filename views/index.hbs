@@ -5,13 +5,14 @@
         <div class="col-lg-6 col-md-12 col-sm-12">
           <h3>TRY</h3>
           <p>Type in zip codes separated by commas to find your place to meet.</p>
-
+          <form action="/zip" method="post">
           <div class="input-group input-group-lg">
             <span class="input-group-addon" id="sizing-addon1">></span>
-            <input type="text" class="form-control" placeholder="Zip Codes" aria-label="Username" aria-describedby="sizing-addon1">
+            <input type="text" class="form-control" name="zip" placeholder="Zip Codes" aria-label="Username" aria-describedby="sizing-addon1">
           </div>
           <br>
-          <button type="submit" name="button" id="submit" class="btn btn-lg btn-success">Go</button>
+            <button type="submit" name="button" id="submit" class="btn btn-lg btn-success">Go</button>
+          </form>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12">
           <img src="/img/map.jpg">

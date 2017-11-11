@@ -14,6 +14,7 @@
     "express": "^4.16.2",
     "hbs": "^4.0.1",
     "import-env": "^1.1.0",
+    "node-yelp-api-v3": "^1.0.3",
     "nodemon": "^1.12.1"
   }
 }
