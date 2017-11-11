@@ -8,3 +8,12 @@
 - Google Maps api
 - Yelp api
 - Google Distance Matrix api
+- geolib
+
+# List of things to do for MVP
+- show zipcode inputs on a google Maps
+-- https://developers.google.com/maps/documentation/javascript/places#place_search_requests
+-- https://developers.google.com/places/javascript/
+- calculate the midpoint of the zipcodes/coordinates
+-- geolibs getCenter(arrayCoords)
+- feed the midpoint into yelp api
