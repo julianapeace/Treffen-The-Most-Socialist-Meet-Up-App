@@ -1,0 +1,29 @@
+{ businesses:
+   [ { id: 'uchi-houston',
+       name: 'Uchi',
+       image_url: 'https://s3-media3.fl.yelpcdn.com/bphoto/2psRwP_YW-0h2MLtE-KAVQ/o.jpg',
+       is_closed: false,
+       url: 'https://www.yelp.com/biz/uchi-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_busine
+ss_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q',
+       review_count: 1463,
+       categories:
+        [ { alias: 'sushi', title: 'Sushi Bars' },
+          { alias: 'japanese', title: 'Japanese' } ],
+       rating: 4.5,
+       coordinates: { latitude: 29.74493, longitude: -95.39091 },
+       transactions: [],
+       price: '$$$',
+       location:
+        { address1: '904 Westheimer Rd',
+          address2: '',
+          address3: '',
+          city: 'Houston',
+          zip_code: '77006',
+          country: 'US',
+          state: 'TX',
+          display_address: [ '904 Westheimer Rd', 'Houston, TX 77006' ] },
+       phone: '+17135224808',
+       display_phone: '(713) 522-4808',
+       distance: 276.7061054642 } ],
+  total: 8132,
+  region: { center: { longitude: -95.38872, latitude: 29.743151 } } }

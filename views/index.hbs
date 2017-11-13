@@ -6,26 +6,17 @@
 
           <h3><img style="max-width: 1em;" src="/img/treffen-logo1.png" alt="treffen meetup app">TRY</h3>
           <p>Type in zip codes separated by commas to find your place to meet.</p>
-          <form action="/zip2" method="post">
+          <form action="/zip" method="post">
           <div class="input-group input-group-lg">
             <span class="input-group-addon" id="sizing-addon1">></span>
             <input type="text" class="form-control" name="zip" placeholder="Zip Codes" aria-label="Username" aria-describedby="sizing-addon1">
           </div>
           <br>
-          <select class="" name="categories" id="select-cat" placeholder="Select a category">
+          <select class="form-control" name="categories" id="select-cat" placeholder="Select a category">
+            <option selected >Select a category</option>
             <option value="coffee">Coffee</option>
             <option value="tea">Tea</option>
           </select>
-          <script>
-				$('#select-cat').selectize({
-					create: true,
-					sortField: {
-						field: 'text',
-						direction: 'asc'
-					},
-					dropdownParent: 'body'
-				});
-				</script>
           <br>
             <button type="submit" name="button" id="submit" class="btn btn-lg btn-success">Go</button>
           </form>
@@ -33,25 +24,12 @@
         <div class="col-lg-6 col-md-12 col-sm-12">
           <!-- <img src="/img/map.jpg"> -->
           <div id="map"></div>
-          <script>
-            function initMap() {
-              var uluru = {lat: -25.363, lng: 131.044};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: uluru
-              });
-              var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-              });
-            }
-          </script>
           <script async defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgoZvBqDWjincCBsmGIGgcEZCDCDNuFzc&callback=initMap">
           </script>
         </div>
       </div>
-      <!-- test area -->
+      <!-- test button area -->
       <form class="" action="/google-map" method="post">
         <button type="submit" name="button" class="btn btn-lg btn-info">Google Distance Matrix</button>
       </form>

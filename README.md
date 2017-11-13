@@ -19,4 +19,4 @@
 - feed the midpoint into yelp api
 
 - dynamic google maps links
-- text message everyone the results
+- ability to text message everyone the results

@@ -13,11 +13,16 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "geojson": "^0.5.0",
     "geolib": "^2.0.24",
     "hbs": "^4.0.1",
     "import-env": "^1.1.0",
+    "ioredis": "^3.2.1",
+    "memcached": "^2.2.2",
     "node-yelp-api-v3": "^1.0.3",
     "nodemon": "^1.12.1",
+    "redis": "^2.8.0",
     "selectize": "^0.12.4"
   }
 }
