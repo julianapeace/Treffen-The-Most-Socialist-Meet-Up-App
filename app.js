@@ -7,6 +7,7 @@ var Promise = require('bluebird')
 const importEnv = require('import-env')
 const port = process.env.PORT || 8000;
 const body_parser = require('body-parser');
+const util = require('util');
 const Yelp = require('node-yelp-api-v3');
 const yelp = new Yelp({
   consumer_key: process.env.yelp_id,
@@ -36,40 +37,29 @@ app.post('/zip', function(req, res, next){
   var GKEY = process.env.GOOGLE_API_KEY
   for (let i = 0; i < zipCodes.length; i++) {
       promises.push(
-        axios.get('https://maps.googleapis.com/maps/api/geocode/json', { params: {components:'postal_code:'+zipCodes[i], key:process.env.GKEY} })
+        new Promise((resolve, reject) => {
+          resolve(
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json', { params: {components:'postal_code:'+zipCodes[i], key:process.env.GKEY} }))
+        })
+        // axios.get('https://maps.googleapis.com/maps/api/geocode/json', { params: {components:'postal_code:'+zipCodes[i], key:process.env.GKEY} })
       );
   }
-  console.log(promises)
-  axios.all(promises)
-    .then(function(response){
-      console.log(response.data)
+  // console.log(promises)
+
+  Promise.all(promises).then((response) => {
+    var coord = []
+    response.forEach((response) => {
+      var latitude = response.data.results[0].geometry.location.lat;
+      var longitude = response.data.results[0].geometry.location.lng;
+      coord.push({latitude,longitude})
     })
-    .catch(next);
-
-  // axios.all(promises)
-  //     .then(axios.spread((...args) => {
-  //         for (let i = 0; i < args.length; i++) {
-  //             myObject[args[i].config.params.saveLocation] = args[i].data;
-  //         }
-  //     }))
-  //     .then(/* use the data */);
-
-/////////////
-
-  // var coord = []
-  // for (i = 0; i < zipCodes.length; i++) {
-  //   var zip = zipCodes[i]
-  //   var GKEY = process.env.GOOGLE_API_KEY
-  //   var google_api = `https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:${zip}&key=${GKEY}`;
-  //   axios.get(google_api)
-  //     .then(function (response) {
-  //       var lat = response.data.results[0].geometry.location.lat;
-  //       var long = response.data.results[0].geometry.location.lng;
-  //       coord.push('hello')
-  //     })
-  //     .catch(next)
-  // }
-  // console.log('Coordinates: ',coord)
+    console.log("Coordinates: ", coord)
+    console.log('Center: ',geolib.getCenter(coord))
+    return geolib.getCenter(coord)
+  }).then(response => {
+    yelp.searchBusiness({ latitude: response.latitude, longitude: response.longitude, limit: 1})
+      .then((results) => console.log(util.inspect(results, {showHidden: false, depth: null})))
+  })
 
   res.redirect('/')
 });
@@ -77,18 +67,8 @@ app.post('/zip', function(req, res, next){
 app.post('/zip2', function(req, res, next){
   // yelp docs: https://www.yelp.com/developers/documentation/v3/business_search
   // node yelp docs: https://github.com/joshuaslate/node-yelp-api
-  var zip = req.body.zip
-  if (!req.body) return res.sendStatus(400)
-  var GKEY = process.env.GOOGLE_API_KEY
-  var google_api = `https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:${zip}&key=${GKEY}`;
-
-  axios.get(google_api)
-    .then(function (response) {
-      var lat = response.data.results[0].geometry.location.lat;
-      var long = response.data.results[0].geometry.location.lng;
-      yelp.searchBusiness({ latitude: lat, longitude: long, limit: 1})
-        .then((results) => console.log(results))
-    })
+  yelp.searchBusiness({category_filter: 'localflavor', limit:1})
+    .then((results) => console.log(util.inspect(results, {showHidden: false, depth: null})))
     .catch(next)
 
   res.redirect('/')
@@ -104,8 +84,8 @@ app.post('/google-map', function(req, res, next){
 
   axios.get(google)
     .then(function(response){
-      console.log(response.data.rows[0].elements[0]);
-      console.log(response.data.rows[1].elements[0]);
+      console.log('from first location',response.data.rows[0].elements[0]);
+      console.log('from second location',response.data.rows[1].elements[0]);
       //i can get distance and duration from multiple origins to the same destination
     })
     .catch(next);

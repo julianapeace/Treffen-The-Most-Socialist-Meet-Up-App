@@ -17,6 +17,7 @@
     "hbs": "^4.0.1",
     "import-env": "^1.1.0",
     "node-yelp-api-v3": "^1.0.3",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "selectize": "^0.12.4"
   }
 }

@@ -14,6 +14,9 @@
 - show zipcode inputs on a google Maps
 -- https://developers.google.com/maps/documentation/javascript/places#place_search_requests
 -- https://developers.google.com/places/javascript/
-- calculate the midpoint of the zipcodes/coordinates
+- calculate the midpoint of the zipcodes/coordinates (done)
 -- geolibs getCenter(arrayCoords)
 - feed the midpoint into yelp api
+
+- dynamic google maps links
+- text message everyone the results
