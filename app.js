@@ -2,6 +2,7 @@ var express = require ('express')
 var app = express()
 var axios = require ('axios')
 var geolib = require('geolib')
+var Promise = require('bluebird')
 //docs for geolib: https://www.npmjs.com/package/geolib
 const importEnv = require('import-env')
 const port = process.env.PORT || 8000;
