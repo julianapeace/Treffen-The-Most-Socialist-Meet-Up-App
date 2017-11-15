@@ -1,37 +1,101 @@
 body{
   font-family: 'Oswald', sans-serif;
   color: #faebd7;
-  /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/orange-purple.jpg') no-repeat center center fixed;*/
-  background-color: white;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/orange-purple.jpg') no-repeat center center fixed;
+  /*background-color: white;*/
   background-size: cover;
 }
 .leftbar{
   /*background-color: #fff;*/
   padding-left: 1em;
+  padding-right: 1em;
+  position: relative;
 }
 .nopadding {
     padding: 0 !important;
     margin:0 !important;
 }
 .logo{
+  padding: 1 1 1 1;
   text-align: center;
   background-color: #faebd7;
+}
+.contact{
+  width: 350px;
+  position:fixed;
+  bottom: 0;
 }
 #map {
  height: 100vh;
  max-width: 100;
 }
 .iw-content{
-  color: #a5a5a5;
+  color: #023e58;
+  max-width: 60%;
   padding: 2em 0;
 }
+/*.iw-content img{*/
+  /*width: 70%;*/
+/*}*/
 h2{
   font-size: 80px;
 }
 p{
   font-size: 20px;
 }
+/*INPUTS*/
+select,
+input[type="text"],
+input[type="number"],
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+select:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
+}
 
+/*BUTTON*/
+input[type="submit"],
+input[type="button"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1d2c4d;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #023e58;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover
+{
+    background: #023e58;
+}
 /*LOADER*/
 #loader {
   position: absolute;

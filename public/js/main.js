@@ -316,7 +316,7 @@ function initMap() {
         event.feature.getProperty('phone') +
         "<br>" +
         "<strong>Address:</strong> " + "<br>" +
-        event.feature.getProperty('address1') + " " + event.feature.getProperty('address1') + "<br>" + "<img src='" + event.feature.getProperty('img') +"'/>" + "<br>" + event.feature.getProperty('url')+'</div>'
+        event.feature.getProperty('address1') + " " + event.feature.getProperty('address1') + "<br>" + "<img src='" + event.feature.getProperty('img') +"'/>" + "<br>" + "<a href='" + event.feature.getProperty('url')+ "'>"+"Website"+'</a>'+'</div>'
       ),
       pixelOffset: new google.maps.Size(0, -40)
     });

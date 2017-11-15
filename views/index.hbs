@@ -1,68 +1,71 @@
 <body>
   <!-- <div id="loader"></div> -->
-    <!-- <div class="container"> -->
-        <div class="col-lg-3">
+  <!-- <div class="container"> -->
+  <div class="col-lg-3 nopadding">
 
-          <!-- LOGO -->
-          <div class="logo nopadding">
-            <img style="max-width:15em;" src="/img/treffen-logo.png" alt="treffen logo the most socialist meetup app">
+    <!-- LOGO -->
+    <div class="logo nopadding">
+      <img style="max-width:15em;" src="/img/treffen-logo.png" alt="treffen logo the most socialist meetup app">
+    </div>
+
+    <!-- LEFTBAR -->
+    <div class="leftbar">
+      <h2><img style="max-width: 1em;" src="/img/treffen-logo1.png" alt="treffen meetup app">TRY</h2>
+      <p>Type in zip codes separated by commas to find your place to meet.</p>
+
+
+      <form action="/zip" method="post">
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-lg-2">
+            <i class="fa fa-hashtag" aria-hidden="true"></i>
           </div>
-
-          <!-- LEFTBAR -->
-          <div class="leftbar">
-          <h2><img style="max-width: 1em;" src="/img/treffen-logo1.png" alt="treffen meetup app">TRY</h2>
-          <p>Type in zip codes separated by commas to find your place to meet.</p>
-          <form action="/zip" method="post">
-          <div class="input-group">
-            <span class="input-group-addon" id="sizing-addon1">></span>
-            <input type="text" class="form-control" name="zip" placeholder="Zip Codes" aria-label="Username" aria-describedby="sizing-addon1">
-          </div>
-          <br>
-
-
-          <div class="form-row">
-            <div class="col-md-9">
-              <i class="fa fa-yelp" aria-hidden="true"></i>
-              <select class="form-control" name="term" id="select-cat" placeholder="Select a category">
-                <option selected >Select a category</option>
-                <option value="coffee">Coffee</option>
-                <option value="tea">Tea</option>
-              </select>
+          <div class="col-lg-10 col-md-10 col-lg-10">
+            <div class="input-group">
+              <span class="input-group-addon" id="sizing-addon1">></span>
+              <input type="text" class="form-control" name="zip" placeholder="Zip Codes" aria-label="Username" aria-describedby="sizing-addon1">
             </div>
-              <div class="col-md-3 ">
-              <i class="fa fa-hashtag" aria-hidden="true"></i>
-              <input class="form-control" type="number" name="num" value="3">
           </div>
         </div>
-          <br>
-            <button type="submit" name="button" id="submit" class="btn btn-lg btn-success">Go</button>
-          </form>
-
-
-          <hr class="primary">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center;">
-              <a href="https://www.linkedin.com/in/julianamei/" class="btn btn-default" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
-              <a href="https://github.com/julianapeace" class="btn btn-default" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-              <a href="https://drive.google.com/file/d/0B8WXGA1XF7uVQnUtcXl0QVR0MVE/view?usp=sharing" class="btn btn-default" target="_blank"><i class="fa fa-file-text-o fa-2x"></i></a>
-            </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-lg-2">
+            <i class="fa fa-yelp" aria-hidden="true"></i>
           </div>
-
-
-
-          <div class="row">
-            <div class="col-md-6 text-center">
-              <i class="fa fa-phone fa-2x"></i>
-            </div>
-            <div class="col-md-6 text-center">
-              <i class="fa fa-envelope-o fa-2x"></i>
-              <p><a href="mailto:chancecordelia@gmail.com"></a></p>
-            </div>
+          <div class="col-lg-10 col-md-10 col-lg-10">
+            <select class="form-control" name="term" id="select-cat" placeholder="Select a category">
+              <option selected >Select a category</option>
+              <option value="coffee">Coffee</option>
+              <option value="tea">Tea</option>
+            </select>
           </div>
+        </div>
+        <br><br>
+        <input type="submit" name="button" class "" value="GO">
+      </form>
+    </div>
 
+    <div class="contact nopadding">
+      <hr class="primary">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 nopadding" style="text-align: center;">
+          <a href="https://www.linkedin.com/in/julianamei/" class="btn btn-default" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+          <a href="https://github.com/julianapeace" class="btn btn-default" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://drive.google.com/file/d/0B8WXGA1XF7uVQnUtcXl0QVR0MVE/view?usp=sharing" class="btn btn-default" target="_blank"><i class="fa fa-file-text-o fa-2x"></i></a>
         </div>
       </div>
-        <!-- MAP -->
-        <div class="col-lg-9 nopadding">
-          <div id="map"></div>
+      <div class="row" style="text-align: center;">
+        <div class="col-md-6 nopadding">
+          <i class="fa fa-phone fa-2x"></i>
         </div>
+        <div class="col-md-6 nopadding">
+          <i class="fa fa-envelope-o fa-2x"></i>
+          <p><a href="mailto:chancecordelia@gmail.com"></a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- MAP -->
+  <div class="col-lg-9 nopadding">
+    <div id="map"></div>
+  </div>

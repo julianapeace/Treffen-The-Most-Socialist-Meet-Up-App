@@ -51,9 +51,8 @@ app.post('/zip', function(req, res, next){
     return center
   })
   .then(center =>{
-    let num = req.body.num
     let term = req.body.term
-    tools.getYelp(center, term,num)
+    tools.getYelp(center, term, 3)
   })
   .catch(next)
 

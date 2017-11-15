@@ -6,25 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.3671292048935,
-          29.7683727033221
-        ]
-      },
-      "properties": {
-        "name": "Paper Co Cafe",
-        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/DQrlkFwd1_TzgZpa7A-nhg/o.jpg",
-        "url": "https://www.yelp.com/biz/paper-co-cafe-houston-2?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
-        "categories": "coffee",
-        "address1": "1100 Elder St",
-        "address2": "Houston, TX 77007",
-        "phone": "(713) 522-3533"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -95.3722551,
           29.7734887
         ]
@@ -44,18 +25,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.362755395472,
-          29.7593203479838
+          -95.41552,
+          29.73884
         ]
       },
       "properties": {
-        "name": "Prelude Coffee & Tea",
-        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/J3afIacAjoDPFQwpF4YfRw/o.jpg",
-        "url": "https://www.yelp.com/biz/prelude-coffee-and-tea-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
-        "categories": "cafes",
-        "address1": "609 Main St",
-        "address2": "Ste 106",
-        "phone": "(832) 382-3466"
+        "name": "Path Of Tea",
+        "img": "https://s3-media4.fl.yelpcdn.com/bphoto/veFp6JhrpV8datvtLNgtiA/o.jpg",
+        "url": "https://www.yelp.com/biz/path-of-tea-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "coffee",
+        "address1": "2340 W Alabama St",
+        "address2": "Houston, TX 77098",
+        "phone": "(713) 252-4473"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.3671292048935,
+          29.7683727033221
+        ]
+      },
+      "properties": {
+        "name": "Paper Co Cafe",
+        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/DQrlkFwd1_TzgZpa7A-nhg/o.jpg",
+        "url": "https://www.yelp.com/biz/paper-co-cafe-houston-2?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "coffee",
+        "address1": "1100 Elder St",
+        "address2": "Houston, TX 77007",
+        "phone": "(713) 522-3533"
       }
     }
   ]
