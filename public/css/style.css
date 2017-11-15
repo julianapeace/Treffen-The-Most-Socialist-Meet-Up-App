@@ -7,7 +7,8 @@ body{
  width: 100%;
 }
 #wrapper{
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://img.sxsw.com/2015/spg_images/IAP44473.png') no-repeat center center fixed;
+  /*commented out background to optimize loading time during development*/
+  /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://img.sxsw.com/2015/spg_images/IAP44473.png') no-repeat center center fixed;*/
     background-size: cover;
   padding-top: 50px;
 }

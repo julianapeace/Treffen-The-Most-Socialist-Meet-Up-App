@@ -16,7 +16,6 @@
 -- https://developers.google.com/places/javascript/
 - calculate the midpoint of the zipcodes/coordinates (done)
 -- geolibs getCenter(arrayCoords)
-- feed the midpoint into yelp api
+- feed the midpoint into yelp api (done)
 
-- dynamic google maps links
 - ability to text message everyone the results

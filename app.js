@@ -1,10 +1,10 @@
+var tools = require('./operations');
 var express = require ('express')
 var app = express()
 var fs = require('fs')
 var axios = require ('axios')
 var geolib = require('geolib')
 var Promise = require('bluebird')
-//docs for geolib: https://www.npmjs.com/package/geolib
 const importEnv = require('import-env')
 const port = process.env.PORT || 8000;
 const body_parser = require('body-parser');
@@ -34,79 +34,34 @@ app.use(express.static('public'));
 app.get('/', function(req, res){
   res.render('index.hbs');
 });
+
 app.post('/zip', function(req, res, next){
   if (!req.body) return res.sendStatus(400)
-  var zipCodes = []
   var inputs = req.body.zip
-  var zipList = inputs.split(',')
-  for (i = 0; i < zipList.length; i++) {
-    var zip = zipList[i].trim()
-    zipCodes.push(zip)
-}
-  console.log('Zip Codes: ',zipCodes)
-//////////////
-  let promises = [];
-  var GKEY = process.env.GOOGLE_API_KEY
-  for (let i = 0; i < zipCodes.length; i++) {
-      promises.push(
-        new Promise((resolve, reject) => {
-          resolve(
-            axios.get('https://maps.googleapis.com/maps/api/geocode/json', { params: {components:'postal_code:'+zipCodes[i], key:process.env.GKEY} }))
-        })
-        // axios.get('https://maps.googleapis.com/maps/api/geocode/json', { params: {components:'postal_code:'+zipCodes[i], key:process.env.GKEY} })
-      );
-  }
-  // console.log(promises)
+  var zipCodes = tools.cleanZip(inputs)
+  let promises = tools.promisify(zipCodes);
 
-  Promise.all(promises).then((response) => {
-    var coord = []
-    response.forEach((response) => {
-      var latitude = response.data.results[0].geometry.location.lat;
-      var longitude = response.data.results[0].geometry.location.lng;
-      coord.push({latitude,longitude})
-    })
-    console.log("Coordinates: ", coord)
-    console.log('Center: ',geolib.getCenter(coord))
-    return geolib.getCenter(coord)
-  }).then(response => {
-    var data = []
-    yelp.searchBusiness({ latitude: response.latitude, longitude: response.longitude, limit: 2})
-      .then((results) =>{
-        //for each result
-        arr = results.businesses
-        arr.forEach(function(r){
-          console.log(r)
-          var name = r.name
-          var img = r.image_url
-          var url = r.url
-          var address1 = r.location.display_address[0]
-          var address2 = r.location.display_address[1]
-          var phone = r.display_phone
-          var lat = r.coordinates.latitude
-          var lng = r.coordinates.longitude
-          var category = r.categories[0].alias
-          data.push({name: name, img: img, url: url, categories: category, address1:address1, address2:address2, phone:phone, lat:lat, lng:lng})
-        })
-           // console.log(util.inspect(results, {showHidden: false, depth: null}))
-        console.log(data)
-        var data_geojson = JSON.stringify(GeoJSON.parse(data, {Point: ['lng', 'lat']}), null, 2);
-        console.log(util.inspect(data_geojson, {showHidden: false, depth: null}))
-        //write to file
-        fs.writeFile('data.geojson', data_geojson, (err)=>{
-          if (err) throw err;
-          console.log('File has been saved.')
-        })
-      })
-      .catch(err=>{console.log(err)})
+  Promise.all(promises)
+  .then(response =>{
+    let coords = tools.get_coords(response)
+    return coords
   })
+  .then(coord =>{
+    let center = tools.get_center(coord)
+    return center
+  })
+  .then(center =>{
+    tools.getYelp(center, 1)
+  })
+  .catch(next)
 
   res.redirect('/')
 });
 
-app.post('/zip2', function(req, res, next){
+app.post('/category', function(req, res, next){
   // yelp docs: https://www.yelp.com/developers/documentation/v3/business_search
   // node yelp docs: https://github.com/joshuaslate/node-yelp-api
-  yelp.searchBusiness({category_filter: 'localflavor', limit:1})
+  yelp.searchBusiness({category_filter: 'coffee', limit:1})
     .then((results) => console.log(util.inspect(results, {showHidden: false, depth: null})))
     .catch(next)
 

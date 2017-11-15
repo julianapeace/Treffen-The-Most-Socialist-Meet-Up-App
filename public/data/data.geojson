@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.3599986477912,
+          29.7597414288733
+        ]
+      },
+      "properties": {
+        "name": "Rachels Cafe",
+        "img": "https://s3-media4.fl.yelpcdn.com/bphoto/1J-5YVm1BK_qqmQCN_-Vcg/o.jpg",
+        "url": "https://www.yelp.com/biz/rachels-cafe-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "tradamerican",
+        "address1": "421 San Jacinto St",
+        "address2": "Houston, TX 77002",
+        "phone": "(713) 229-7067"
+      }
+    }
+  ]
+}

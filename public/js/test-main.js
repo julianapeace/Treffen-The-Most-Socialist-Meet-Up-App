@@ -1,5 +1,15 @@
+var map, heatmap, infoWindow;
+var ws_address;
+var ws_wsid = 'g66cb3dc63cb74226ac55ac06fa465f1f';
+// var ws_address = '3302 Canal St., Houston, TX';
+var ws_format = 'tall';
+var ws_width = '300';
+var ws_height = '350';
+var FEATURE_TYPE;
+var data = 'on';
+
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: new google.maps.LatLng(29.7604, -95.3698),
     mapTypeId: 'terrain',
@@ -40,6 +50,39 @@ function initMap() {
           handleLocationError(false, infoWindow, map.getCenter());
         }
 
+  // heatmap = new google.maps.visualization.HeatmapLayer({
+  //      data: getPoints(),
+  //      map: map,
+  //      radius: 20,
+  //      opacity: .5
+  //    });
+
+
+  map.data.setStyle(function (feature) {
+     if (feature.getProperty('offense') == 'Theft' || feature.getProperty('offense') == 'Burglary' || feature.getProperty('offense') == 'Auto Theft') {
+       return {
+         icon: '/static/images/non.png'
+       }
+     }
+     else if (feature.getProperty('offense') == 'Aggravated Assault' || feature.getProperty('offense') == 'Murder' || feature.getProperty('offense') == 'Robbery' || feature.getProperty('offense') == 'Rape') {
+       return {
+         icon: '/static/images/violent_crimes.png'
+       }
+     }
+     else if (feature.getProperty('type') == 'bike') {
+       return {
+         strokeColor: '#00C7FF',
+         strokeOpacity: 1.0,
+         strokeWeight: 2
+       }
+     }
+
+     return {};
+   });
+
+  map.data.addListener('addfeature', function (event) {
+     event.feature.setProperty('type', FEATURE_TYPE);
+  });
 
   map.data.addListener('click', function(event){
    var infoWindow = new google.maps.InfoWindow({
@@ -73,12 +116,13 @@ function initMap() {
     miny = initialViewPort.f.b;
     maxy = initialViewPort.f.f;
 
-
-      myData();
-
+    if (data == 'on') {
+      add_data();
+    }
   });
 }
 
+////OUTSIDE INIT MAP
 function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
 }
@@ -94,38 +138,47 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 // Loop through the results array and place a marker for each
 // set of coordinates.
 
-function myData(){
-    map.data.loadGeoJson('data.geojson')
-  //
-  // axios.get('/data/test-data.geojson')
-  //   .then(function(response){
-  //     console.log(response.data)
-      // map.data.addGeoJson(response.data)
-  //   })
-  //   .catch(function(error){
-  //     console.log(error)
-  //   })
+function load_geojson(results) {
+  console.log(results);
+  // FEATURE_TYPE = type;
+  map.data.addGeoJson(results);
+  console.log('GEO JSON Complete');
 }
 
-// function load_geojson(results) {
-//   console.log(results);
-//   // FEATURE_TYPE = type;
-//   map.data.addGeoJson(results);
-//   console.log('GEO JSON Complete');
-// }
-//
-// function add_data () {
-//     axios.get(`/data/test-data.geojson`)
-//    .then(function (response) {
-//
-//      crimeMapMarkers = load_geojson(response.data, 'crime');
-//    })
-//    .catch(function (error) {
-//      console.log(error);
-//    });
-// }
+function add_data () {
+    axios.get(`/static/data/convertcsv-2.geojson`)
+   .then(function (response) {
+     crimeMapMarkers = load_geojson(response.data, 'crime');
+   })
+   .catch(function (error) {
+     console.log(error);
+   });
+}
+
+function hideData() {
+    map.data.forEach(function (thing) {
+        if (thing.getProperty('type') == 'crime') {
+            map.data.remove(thing);
+        }
+    })
+}
 
 
 $(document).ready(function () {
-// add_data();
+  $('#sidebarCollapse').click(function () {
+    console.log('sidebar toggle');
+    $('#sidebar').toggleClass('active');
+  });
+
+  $('#crime').on('click', toggle (function (){
+      crimes = 'on';
+      return add_data();
+  }, function (){
+      crimes = 'off';
+      return hideData();
+  }));
+  $('#walkscore_button').click(function () {
+      console.log('walkscore toggle');
+      $('#walkscore_container').toggleClass('active');
+   });
 });
