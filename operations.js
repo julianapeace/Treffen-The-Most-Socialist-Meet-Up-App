@@ -93,5 +93,18 @@ function getYelp(center, term, num){
       .catch(err=>{console.log(err)})
   }
 
+  function get_matrix(){
+    var GKEY = process.env.GOOGLE_MATRIX_KEY
+    var arrival_time = 'NULL'
+    var google = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=29.7431508,-95.38872|29.77,-95.37&destinations=Houston,TX&key=${GKEY}`
 
-module.exports = {cleanZip, promisify, get_coords, get_center, getYelp, get_geojson}
+    axios.get(google)
+      .then(function(response){
+        console.log('from first location',response.data.rows[0].elements[0]);
+        console.log('from second location',response.data.rows[1].elements[0]);
+      })
+      .catch(err=>{console.log(err)});
+  }
+
+
+module.exports = {cleanZip, promisify, get_coords, get_center, getYelp, get_geojson, get_matrix}

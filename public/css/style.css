@@ -6,7 +6,6 @@ body{
   background-size: cover;
 }
 .leftbar{
-  /*background-color: #fff;*/
   padding-left: 1em;
   padding-right: 1em;
   position: relative;
@@ -15,10 +14,15 @@ body{
     padding: 0 !important;
     margin:0 !important;
 }
+.alignright{
+  text-align: right;
+}
 .logo{
-  padding: 1 1 1 1;
-  text-align: center;
+  text-align: left;
   background-color: #faebd7;
+}
+.logo img{
+  padding:15px 0px 10px 10px;
 }
 .contact{
   width: 350px;

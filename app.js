@@ -34,6 +34,14 @@ app.use(express.static('public'));
 app.get('/', function(req, res){
   res.render('index.hbs');
 });
+app.get('/yelp', function(req, res){
+  axios.get("http://localhost:8000/data/yelp-categories.json")
+    .then(results =>{
+      console.log(typeof(results))
+      // console.log(util.inspect(x, {showHidden: false, depth: null}))
+    })
+    .catch(err=>{console.log(err)})
+})
 
 app.post('/zip', function(req, res, next){
   if (!req.body) return res.sendStatus(400)
@@ -56,26 +64,11 @@ app.post('/zip', function(req, res, next){
   })
   .catch(next)
 
+  var matrix = tools.get_matrix()
+  console.log(matrix)
+
   res.redirect('/')
 });
-
-app.post('/google-map', function(req, res, next){
-  //documentation link: https://developers.google.com/maps/documentation/distance-matrix/intro#Introduction
-  //calculate socialistic distance with arrival time/travel
-  var GKEY = process.env.GOOGLE_MATRIX_KEY
-  var arrival_time = 'NULL'//potential parameter
-  //Note: this api has a traffic_model parameter but i need a google premium plan client id. parameter needs departuretime.
-  var google = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=29.7431508,-95.38872|29.77,-95.37&destinations=Houston,TX&key=${GKEY}`
-
-  axios.get(google)
-    .then(function(response){
-      console.log('from first location',response.data.rows[0].elements[0]);
-      console.log('from second location',response.data.rows[1].elements[0]);
-      //i can get distance and duration from multiple origins to the same destination
-    })
-    .catch(next);
-  res.redirect('/')
-})
 
 app.listen(port, function(){
   console.log('listening on port ' + port)
