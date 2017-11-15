@@ -32,7 +32,8 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  res.render('index.hbs');
+  var matrix = ""
+  res.render('index.hbs', {'matrix':matrix});
 });
 app.get('/yelp', function(req, res){
   axios.get("http://localhost:8000/data/yelp-categories.json")
@@ -67,7 +68,7 @@ app.post('/zip', function(req, res, next){
   var matrix = tools.get_matrix()
   console.log(matrix)
 
-  res.redirect('/')
+  res.render('index.hbs', {'matrix':matrix})
 });
 
 app.listen(port, function(){

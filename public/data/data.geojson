@@ -6,18 +6,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.41085,
-          29.73203
+          -95.3868489,
+          29.7442261
         ]
       },
       "properties": {
-        "name": "Vapor-Lot",
-        "img": "https://s3-media4.fl.yelpcdn.com/bphoto/lh3_q02RrmKVdav6-87_JA/o.jpg",
-        "url": "https://www.yelp.com/biz/vapor-lot-houston-4?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
-        "categories": "vapeshops",
-        "address1": "3816 S Shepherd Dr",
-        "address2": "Houston, TX 77098",
-        "phone": "(832) 606-8273"
+        "name": "Fix Coffeebar",
+        "img": "https://s3-media2.fl.yelpcdn.com/bphoto/VVczWppWTV0WR_ukt_PjBQ/o.jpg",
+        "url": "https://www.yelp.com/biz/fix-coffeebar-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "coffee",
+        "address1": "415 Westheimer Rd",
+        "address2": "Houston, TX 77006",
+        "phone": "(832) 807-4562"
       }
     },
     {
@@ -25,18 +25,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.418044,
-          29.714785
+          -95.3882239,
+          29.738384
         ]
       },
       "properties": {
-        "name": "Half Price Books",
-        "img": "https://s3-media2.fl.yelpcdn.com/bphoto/oRWAy6zh_00jDRp6rIOkZw/o.jpg",
-        "url": "https://www.yelp.com/biz/half-price-books-houston-3?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
-        "categories": "media",
-        "address1": "2537 University Blvd",
-        "address2": "Houston, TX 77005",
-        "phone": "(713) 524-6635"
+        "name": "Siphon Coffee",
+        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/1UOXSALhPGVjKV1cEmzXLQ/o.jpg",
+        "url": "https://www.yelp.com/biz/siphon-coffee-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "coffee",
+        "address1": "701 W Alabama St",
+        "address2": "Houston, TX 77006",
+        "phone": "(281) 974-4426"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.3752621,
+          29.7359088
+        ]
+      },
+      "properties": {
+        "name": "Retrospect Coffee Bar",
+        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/sUVhn7Nnmufm6B7uW8HJpQ/o.jpg",
+        "url": "https://www.yelp.com/biz/retrospect-coffee-bar-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "coffee",
+        "address1": "3709 La Branch St",
+        "address2": "Houston, TX 77004",
+        "phone": "(713) 993-6600"
       }
     }
   ]

@@ -1,7 +1,7 @@
 <body>
   <!-- <div id="loader"></div> -->
   <!-- <div class="container"> -->
-  <div class="col-lg-3 nopadding">
+  <div class="col-lg-3 col-md-3 col-sm-12 nopadding">
 
     <!-- LOGO -->
     <div class="logo nopadding">
@@ -18,10 +18,10 @@
 
       <form action="/zip" method="post">
         <div class="row">
-          <div class="col-lg-2 col-md-2 col-lg-2 alignright">
+          <div class="col-lg-2 col-md-2 col-sm-2 alignright">
             <i class="fa fa-hashtag" aria-hidden="true"></i>
           </div>
-          <div class="col-lg-10 col-md-10 col-lg-10">
+          <div class="col-lg-10 col-md-10 col-sm-10">
             <div class="input-group">
               <span class="input-group-addon" id="sizing-addon1">></span>
               <input type="text" class="form-control" name="zip" placeholder="Zip Codes" aria-label="Username" aria-describedby="sizing-addon1">
@@ -60,12 +60,13 @@
       </form>
     </div>
 
+<div class="matrix">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-lg-2 alignright">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
       </div>
       <div class="col-lg-10 col-md-10 col-lg-10">
-        <p>Time: </p>
+        <p>Travel Time: {{matrix}}</p>
       </div>
     </div>
 
@@ -77,7 +78,7 @@
         <p>Distance: </p>
       </div>
     </div>
-
+  </div>
 
     <div class="contact nopadding">
       <hr class="primary">
@@ -102,6 +103,6 @@
 
   </div>
   <!-- MAP -->
-  <div class="col-lg-9 nopadding">
+  <div class="col-lg-9 col-md-9 col-sm-12 nopadding">
     <div id="map"></div>
   </div>

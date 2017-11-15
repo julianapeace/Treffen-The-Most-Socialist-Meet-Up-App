@@ -24,6 +24,11 @@ body{
 .logo img{
   padding:15px 0px 10px 10px;
 }
+.matrix{
+  position: absolute;
+  width: 100%;
+  bottom: -200px;
+}
 .contact{
   width: 350px;
   position:fixed;
@@ -43,9 +48,11 @@ body{
 /*}*/
 h2{
   font-size: 80px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 p{
   font-size: 20px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 /*INPUTS*/
 select,
@@ -65,8 +72,12 @@ input[type="number"],
     margin-bottom: 4%;
     border: 1px solid #ccc;
     padding: 3%;
+    /*padding: .5em 1em;*/
     color: #555;
+    /*background-color: rbga(255,255,255, 0.6);*/
+    /*border-bottom:1px solid #C5CBD5;*/
     font: 95% Arial, Helvetica, sans-serif;
+    /*line-height: 1.5;*/
 }
 select:focus,
 input[type="text"]:focus,
@@ -91,14 +102,16 @@ input[type="button"]
     text-align: center;
     font-style: normal;
     width: 100%;
-    border: 1px solid #023e58;
+    border: 1px solid #223359;
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
 }
 input[type="submit"]:hover,
 input[type="button"]:hover
 {
-    background: #023e58;
+    background: #223359;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.6);
+    margin-top: -1px;
 }
 /*LOADER*/
 #loader {
