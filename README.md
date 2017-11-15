@@ -1,6 +1,7 @@
 # treffen
 
 ### The most socialistic meetup app ever
+### No one person drives further nor sits in traffic longer than the other.
 
 ##### Combined Stacks
 - ExpressJS

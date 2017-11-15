@@ -51,22 +51,14 @@ app.post('/zip', function(req, res, next){
     return center
   })
   .then(center =>{
-    tools.getYelp(center, 1)
+    let num = req.body.num
+    let term = req.body.term
+    tools.getYelp(center, term,num)
   })
   .catch(next)
 
   res.redirect('/')
 });
-
-app.post('/category', function(req, res, next){
-  // yelp docs: https://www.yelp.com/developers/documentation/v3/business_search
-  // node yelp docs: https://github.com/joshuaslate/node-yelp-api
-  yelp.searchBusiness({category_filter: 'coffee', limit:1})
-    .then((results) => console.log(util.inspect(results, {showHidden: false, depth: null})))
-    .catch(next)
-
-  res.redirect('/')
-})
 
 app.post('/google-map', function(req, res, next){
   //documentation link: https://developers.google.com/maps/documentation/distance-matrix/intro#Introduction

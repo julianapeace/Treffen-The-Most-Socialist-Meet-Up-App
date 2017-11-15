@@ -64,9 +64,9 @@ function get_geojson(data){
   })
 }
 
-function getYelp(center, num){
+function getYelp(center, term, num){
     var data = []
-    yelp.searchBusiness({ latitude: center.latitude, longitude: center.longitude, limit: num})
+    yelp.searchBusiness({ term: term, latitude: center.latitude, longitude: center.longitude, limit: num})
       .then((results) =>{
         //for each result
         arr = results.businesses
