@@ -1,9 +1,9 @@
-# [Treffen](http://treffen.herokuapp.com/)
 ![alt text](https://i.imgur.com/sS1onw5.png "Treffen Logo")
+#  Check it out live [Treffen](http://treffen.herokuapp.com/)
 ### The most socialistic meetup app ever
 ### No one person drives further nor sits in traffic longer than the other.
 
-##### Tech Stacks
+# Tech Stacks
 - ExpressJS
 - NodeJS
 - Google Distance Matrix API
