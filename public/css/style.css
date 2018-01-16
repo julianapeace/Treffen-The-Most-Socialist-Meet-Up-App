@@ -1,11 +1,12 @@
 body{
   font-family: 'Oswald', sans-serif;
-  color: #faebd7;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/orange-purple.jpg') no-repeat center center fixed;
-  /*background-color: white;*/
-  background-size: cover;
+  color: rgba(0, 0, 0, 0.87);
+  /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/orange-purple.jpg') no-repeat center center fixed; */
+  background-color: #eee;
+  /* background-size: cover; */
 }
 .leftbar{
+  padding-top:1em;
   padding-left: 1em;
   padding-right: 1em;
   position: relative;
@@ -14,12 +15,18 @@ body{
     padding: 0 !important;
     margin:0 !important;
 }
-.alignright{
-  text-align: right;
+.form-input{
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo{
-  text-align: left;
-  background-color: #faebd7;
+  background-color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .logo img{
   padding:15px 0px 10px 10px;
@@ -47,12 +54,10 @@ body{
   /*width: 70%;*/
 /*}*/
 h2{
-  font-size: 80px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  /* font-size: 80px; */
 }
 p{
-  font-size: 20px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  /* font-size: 20px; */
 }
 /*INPUTS*/
 select,
@@ -79,40 +84,39 @@ input[type="number"],
     font: 95% Arial, Helvetica, sans-serif;
     /*line-height: 1.5;*/
 }
-select:focus,
-input[type="text"]:focus,
-input[type="number"]:focus,
-{
-    box-shadow: 0 0 5px #43D1AF;
-    padding: 3%;
-    border: 1px solid #43D1AF;
+
+/*My Button CSS*/
+.myButton {
+  /*background-color:#66615b;*/
+  background-color:#223359;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  width: 100%;
+  height: 3em;
+  letter-spacing: 4px;
+  font-size:25px;
+  padding:9px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 1px #4d4242;
+  box-shadow:0px 2px 4px rgba(0,0,0,0.18);
+}
+.myButton:hover {
+  position:relative;
+  /*background-color:#948a81;*/
+  background-color:#1B96FE;
+  color:#ffffff;
+  text-decoration:none;
+  text-shadow:0px 1px 2px #4d4242;
+  box-shadow:0px 4px 6px rgba(0,0,0,0.28);
+  bottom: 1px;
+}
+.myButton:active {
+  position:relative;
+  text-decoration:none;
+  top:1px;
 }
 
-/*BUTTON*/
-input[type="submit"],
-input[type="button"]
-{
-    position: relative;
-    display: block;
-    padding: 19px 39px 18px 39px;
-    color: #FFF;
-    margin: 0 auto;
-    background: #1d2c4d;
-    font-size: 18px;
-    text-align: center;
-    font-style: normal;
-    width: 100%;
-    border: 1px solid #223359;
-    border-width: 1px 1px 3px;
-    margin-bottom: 10px;
-}
-input[type="submit"]:hover,
-input[type="button"]:hover
-{
-    background: #223359;
-    box-shadow:0px 2px 3px rgba(0,0,0,0.6);
-    margin-top: -1px;
-}
 /*LOADER*/
 #loader {
   position: absolute;

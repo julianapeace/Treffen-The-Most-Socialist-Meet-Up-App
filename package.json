@@ -21,7 +21,7 @@
     "ioredis": "^3.2.1",
     "memcached": "^2.2.2",
     "node-yelp-api-v3": "^1.0.3",
-    "nodemon": "^1.12.1",
+    "nodemon": "^1.14.11",
     "redis": "^2.8.0",
     "selectize": "^0.12.4"
   }

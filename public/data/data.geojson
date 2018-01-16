@@ -6,18 +6,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.3868489,
-          29.7442261
+          -97.1261408552527,
+          39.3773079485496
         ]
       },
       "properties": {
-        "name": "Fix Coffeebar",
-        "img": "https://s3-media2.fl.yelpcdn.com/bphoto/VVczWppWTV0WR_ukt_PjBQ/o.jpg",
-        "url": "https://www.yelp.com/biz/fix-coffeebar-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "name": "Java Junkies Clay Center",
+        "img": "",
+        "url": "https://www.yelp.com/biz/java-junkies-clay-center-clay-center?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
         "categories": "coffee",
-        "address1": "415 Westheimer Rd",
-        "address2": "Houston, TX 77006",
-        "phone": "(832) 807-4562"
+        "address1": "505 Court St",
+        "address2": "Clay Center, KS 67432",
+        "phone": "(785) 632-2929"
       }
     },
     {
@@ -25,18 +25,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.3882239,
-          29.738384
+          -97.1261277794838,
+          39.37734156847
         ]
       },
       "properties": {
-        "name": "Siphon Coffee",
-        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/1UOXSALhPGVjKV1cEmzXLQ/o.jpg",
-        "url": "https://www.yelp.com/biz/siphon-coffee-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
-        "categories": "coffee",
-        "address1": "701 W Alabama St",
-        "address2": "Houston, TX 77006",
-        "phone": "(281) 974-4426"
+        "name": "Tasty Pastry Bakery & Coffee Shop",
+        "img": "https://s3-media4.fl.yelpcdn.com/bphoto/FEfPD9ud5xHKuL2SBeJV6w/o.jpg",
+        "url": "https://www.yelp.com/biz/tasty-pastry-bakery-and-coffee-shop-clay-center?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "bakeries",
+        "address1": "511 Court St",
+        "address2": "Clay Center, KS 67432",
+        "phone": "(785) 632-2335"
       }
     },
     {
@@ -44,18 +44,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.3752621,
-          29.7359088
+          -97.6313766,
+          39.8221228
         ]
       },
       "properties": {
-        "name": "Retrospect Coffee Bar",
-        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/sUVhn7Nnmufm6B7uW8HJpQ/o.jpg",
-        "url": "https://www.yelp.com/biz/retrospect-coffee-bar-houston?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
-        "categories": "coffee",
-        "address1": "3709 La Branch St",
-        "address2": "Houston, TX 77004",
-        "phone": "(713) 993-6600"
+        "name": "The Feathered Nest",
+        "img": "https://s3-media3.fl.yelpcdn.com/bphoto/Y9QfhUAy2CVWx7GYlSEQ9w/o.jpg",
+        "url": "https://www.yelp.com/biz/the-feathered-nest-belleville?adjust_creative=b0iuCkuSppQ6eqyRrCEj_Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=b0iuCkuSppQ6eqyRrCEj_Q",
+        "categories": "furniture",
+        "address1": "1914 M St",
+        "address2": "Belleville, KS 66935",
+        "phone": "(785) 527-7200"
       }
     }
   ]

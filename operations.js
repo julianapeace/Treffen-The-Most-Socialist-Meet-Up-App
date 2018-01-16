@@ -93,15 +93,23 @@ function getYelp(center, term, num){
       .catch(err=>{console.log(err)})
   }
 
-  function get_matrix(){
+  function get_matrix(center_input, coord_input){
+    // center = { latitude: '39.555215', longitude: '-97.231451' }
+    // coord = { latitude: 40.7135097, longitude: -73.9859414 }
+    let center_lat = center_input['latitude']
+    let center_long= center_input['longitude']
+
+    let coord_lat = coord_input['latitude']
+    let coord_long = coord_input['longitude']
+
     var GKEY = process.env.GOOGLE_MATRIX_KEY
     var arrival_time = 'NULL'
-    var google = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=29.7431508,-95.38872|29.77,-95.37&destinations=Houston,TX&key=${GKEY}`
+
+    var google = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${coord_lat},${coord_long}&destinations=${center_lat},${center_long}&key=${GKEY}`
 
     axios.get(google)
       .then(function(response){
-        console.log('from first location',response.data.rows[0].elements[0]);
-        console.log('from second location',response.data.rows[1].elements[0]);
+        console.log('Google Distance Matrix:',response.data.rows[0].elements[0]);
       })
       .catch(err=>{console.log(err)});
   }

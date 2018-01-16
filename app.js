@@ -32,17 +32,19 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  var matrix = ""
-  res.render('index.hbs', {'matrix':matrix});
+  matrix = 'hello' || '';
+  distance = 'world' || '';
+  res.render('index.hbs', {'matrix':matrix, 'distance': distance});
 });
-app.get('/yelp', function(req, res){
-  axios.get("http://localhost:8000/data/yelp-categories.json")
-    .then(results =>{
-      console.log(typeof(results))
-      // console.log(util.inspect(x, {showHidden: false, depth: null}))
-    })
-    .catch(err=>{console.log(err)})
-})
+
+// app.get('/yelp', function(req, res){
+//   axios.get("http://localhost:8000/data/yelp-categories.json")
+//     .then(results =>{
+//       console.log(typeof(results))
+//       console.log(util.inspect(results, {showHidden: false, depth: null}))
+//     })
+//     .catch(err=>{console.log(err)})
+// })
 
 app.post('/zip', function(req, res, next){
   if (!req.body) return res.sendStatus(400)
@@ -50,25 +52,35 @@ app.post('/zip', function(req, res, next){
   var zipCodes = tools.cleanZip(inputs)
   let promises = tools.promisify(zipCodes);
 
+
   Promise.all(promises)
   .then(response =>{
     let coords = tools.get_coords(response)
     return coords
   })
-  .then(coord =>{
-    let center = tools.get_center(coord)
-    return center
+  .then(coords =>{
+    let center = tools.get_center(coords)
+    return [center, coords]
   })
-  .then(center =>{
+  .then(response => {
+    let center = response[0]
+    let coords = response [1]
+    let matrix = tools.get_matrix(center, coords[0])
+    return [center, matrix]
+  })
+  .then(response =>{
+    let center = response [0]
+    let matrix = response [1]
     let term = req.body.term
     tools.getYelp(center, term, 3)
+    console.log('*'*50)
+    console.log(matrix)
+    res.render('index.hbs', {'matrix':matrix})
   })
-  .catch(next)
+  // .catch(next)
+  .catch(err=>{console.log(err)})
 
-  var matrix = tools.get_matrix()
-  console.log(matrix)
 
-  res.render('index.hbs', {'matrix':matrix})
 });
 
 app.listen(port, function(){
