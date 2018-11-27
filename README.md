@@ -2,7 +2,7 @@
 #  Check it out live [Treffen](http://treffen.herokuapp.com/)
 ### The most socialistic meetup app ever
 ### No one person drives further nor sits in traffic longer than the other.
-
+ ![Friends](https://media.giphy.com/media/2NLmQlBLL7DEs/giphy.gif) 
 # Tech Stacks
 - ExpressJS
 - NodeJS
