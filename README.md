@@ -1,9 +1,9 @@
-![alt text](https://i.imgur.com/sS1onw5.png "Treffen Logo")
+![Treffen](https://i.imgur.com/sS1onw5.png "Treffen Logo")
+![Friends](https://media.giphy.com/media/2NLmQlBLL7DEs/giphy.gif) 
+
 #  Check it out live [Treffen](http://treffen.herokuapp.com/)
 ### The most socialistic meetup app ever
 ### No one person drives further nor sits in traffic longer than the other.
-
-![Friends](https://media.giphy.com/media/2NLmQlBLL7DEs/giphy.gif) 
  
 # Tech Stacks
 - ExpressJS
